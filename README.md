@@ -11,8 +11,10 @@ Sequencing 18 pools of 3 zebrafish embryos with muscle mutations. 4 condition wi
 
 Mutations are:
 
-- sa18907 / srpk3 (GRCz11:8:8336586 T->C)
-- sa5562 / ttnb (GRCz11:9:42861631 T->G)
+- sa18907 / srpk3 (GRCz11:8:8336586 T->C) https://zmp.buschlab.org/gene/ENSDARG00000005916#sa18907
+- sa5562 / ttnb (GRCz11:9:42861631 T->G) https://zmp.buschlab.org/gene/ENSDARG00000091908#sa5562
+
+ttnb is now ENSDARG00000000563 / ttn.1
 
 Samples went to CSCI for QC and library making on 2021-12-09
 
@@ -316,7 +318,7 @@ echo "Rscript deseq2.R -s $basedir/deseq2-all/samples.tsv \
 -e srpk3_hom_ttnb_het,srpk3_hom_ttnb_wt \
 -c srpk3_wt_ttnb_het,srpk3_wt_ttnb_wt \
 -a $basedir/annotation/annotation.txt -d $basedir/star2 -o $basedir/deseq2-all" > $basedir/deseq2/deseq2.txt
-for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt; do
+for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_wt; do
   e=`echo "$comp" | awk -F':' '{ print $1 }'`
   c=`echo "$comp" | awk -F':' '{ print $2 }'`
   mkdir -p $basedir/deseq2-${e}_vs_$c
@@ -346,6 +348,7 @@ grep -c ^ENS $basedir/deseq2-*/sig.tsv | sed -e 's/\/sig.tsv:/\t/' | sed -e 's/.
 ```
 srpk3_hom_ttnb_het vs srpk3_hom_ttnb_wt 15
 srpk3_hom_ttnb_het vs srpk3_wt_ttnb_het 246
+srpk3_hom_ttnb_het vs srpk3_wt_ttnb_wt  794
 srpk3_hom_ttnb_wt vs srpk3_wt_ttnb_wt   572
 srpk3_wt_ttnb_het vs srpk3_wt_ttnb_wt   128
 ```
@@ -395,7 +398,7 @@ bcftools mpileup -Ou --max-depth 10000 --annotate FORMAT/AD -r 8:8336586-8336586
 module unload bcftools/1.11
 ```
 
-Only get genotypes for srpk3:
+Only get genotypes for srpk3
 
 ```
 gzip -cd $basedir/genotyping/calls.vcf.gz | tail -2 \
@@ -432,6 +435,96 @@ srpk3_wt_ttnb_wt_7     0/0  3,0
 
 - All srpk3_hom_* samples are clearly homs
 - Read depth for srpk3_wt is very low, but no ALT reads found
+
+On count plot for ENSDARG00000005916 / srpk3, wt samples are lower than hom, but not zero:
+
+https://temp.buschlab.org/muscle-rnaseq/deseq2-all/counts.pdf
+
+Consistent with essential splice site mutation
+
+On count plot for ENSDARG00000000563 / ttn.1, het samples are lower than wt, but not zero:
+
+https://temp.buschlab.org/muscle-rnaseq/deseq2-srpk3_hom_ttnb_het_vs_srpk3_hom_ttnb_wt/counts.pdf
+
+Check genotypes for srpk3:
+
+```
+module load samtools/1.11
+for sample in `cut -f1 $gitdir/samples.tsv`; do
+  echo -ne "$sample\t"
+  samtools tview --reference $basedir/reference/Danio_rerio.GRCz11.dna_sm.primary_assembly.fa -d T -p 8:8336586 $basedir/star2/$sample/Aligned.sortedByCoord.out.bam \
+| tail -n +4 | cut -c1 | grep -v '^ ' | sort | uniq -c | tr '\n' ' '
+  echo
+done
+module unload samtools/1.11
+```
+
+```
+srpk3_hom_ttnb_het_1          6 <       4 >      14 C      19 c 
+srpk3_hom_ttnb_het_2          7 <       6 >      35 C      18 c 
+srpk3_hom_ttnb_het_7          8 <       6 >      26 C      25 c 
+srpk3_hom_ttnb_het_8          6 <       3 >      14 C      11 c 
+srpk3_hom_ttnb_het_9          7 <       3 >      26 C      16 c 
+srpk3_hom_ttnb_het_10        10 <       4 >      26 C      26 c 
+srpk3_hom_ttnb_wt_1           9 <       9 >      25 C      28 c 
+srpk3_hom_ttnb_wt_4          12 <       5 >      22 C      13 c 
+srpk3_hom_ttnb_wt_5           9 <       2 >      29 C      14 c 
+srpk3_hom_ttnb_wt_6          15 <      18 >       1 A      30 C      39 c 
+srpk3_hom_ttnb_wt_7           8 <       3 >      17 C      24 c 
+srpk3_hom_ttnb_wt_8          10 <       5 >      27 C       1 G      20 c 
+srpk3_wt_ttnb_het_1          22 <      25 > 
+srpk3_wt_ttnb_het_2           2 .      17 <      20 > 
+srpk3_wt_ttnb_het_3           1 .      26 <      10 > 
+srpk3_wt_ttnb_het_7          36 <      32 > 
+srpk3_wt_ttnb_het_8           1 .      31 <      29 > 
+srpk3_wt_ttnb_het_9          45 <      47 > 
+srpk3_wt_ttnb_wt_2           19 <      28 > 
+srpk3_wt_ttnb_wt_3           25 <      28 > 
+srpk3_wt_ttnb_wt_4           37 <      33 > 
+srpk3_wt_ttnb_wt_5            1 ,       1 .      32 <      21 > 
+srpk3_wt_ttnb_wt_6            2 .      38 <      34 > 
+srpk3_wt_ttnb_wt_7            1 ,       4 .      42 <      36 > 
+```
+
+Check genotypes for ttnb:
+
+```
+module load samtools/1.11
+for sample in `cut -f1 $gitdir/samples.tsv`; do
+  echo -ne "$sample\t"
+  samtools tview --reference $basedir/reference/Danio_rerio.GRCz11.dna_sm.primary_assembly.fa -d T -p 9:42861631 $basedir/star2/$sample/Aligned.sortedByCoord.out.bam \
+| tail -n +4 | cut -c1 | grep -v '^ ' | sort | uniq -c | tr '\n' ' '
+  echo
+done
+module unload samtools/1.11
+```
+
+```
+srpk3_hom_ttnb_het_1          3 <
+srpk3_hom_ttnb_het_2          2 <       7 >       1 c
+srpk3_hom_ttnb_het_7          2 ,       1 .       7 <       7 >
+srpk3_hom_ttnb_het_8          1 <       8 >
+srpk3_hom_ttnb_het_9          3 <       5 >
+srpk3_hom_ttnb_het_10         1 ,       4 <      12 >
+srpk3_hom_ttnb_wt_1           4 <       1 >
+srpk3_hom_ttnb_wt_4           2 ,       5 <       2 >
+srpk3_hom_ttnb_wt_5           2 <       3 >
+srpk3_hom_ttnb_wt_6           2 <       8 >
+srpk3_hom_ttnb_wt_7          11 <       4 >
+srpk3_hom_ttnb_wt_8           2 <       6 >
+srpk3_wt_ttnb_het_1           3 <       3 >
+srpk3_wt_ttnb_het_2           2 <       7 >
+srpk3_wt_ttnb_het_3           2 <      10 >
+srpk3_wt_ttnb_het_7           1 ,       6 <       7 >
+srpk3_wt_ttnb_het_8           5 <      12 >
+srpk3_wt_ttnb_het_9           2 <       3 >
+srpk3_wt_ttnb_wt_2            7 <       4 >
+srpk3_wt_ttnb_wt_3            2 <      10 >
+srpk3_wt_ttnb_wt_4            7 <      12 >
+srpk3_wt_ttnb_wt_5           12 <       7 >
+srpk3_wt_ttnb_wt_6            1 ,      10 <       8 >
+srpk3_wt_ttnb_wt_7            7 <       7 >
+```
 
 ## Archive
 

@@ -11,7 +11,7 @@
 #SBATCH -A BUSCH-NENTWICH-SL3-CPU
 #SBATCH --mem=16900
 #SBATCH -p cclake,icelake
-#SBATCH --array=1-5
+#SBATCH --array=1-6
 
 cd /rds/user/is460/hpc-work/muscle-rnaseq/deseq2
 

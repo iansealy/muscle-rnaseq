@@ -10,7 +10,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH -A BUSCH-NENTWICH-SL3-CPU
 #SBATCH -p cclake,icelake
-#SBATCH --array=1-5
+#SBATCH --array=1-6
 
 cd /rds/user/is460/hpc-work/muscle-rnaseq/topgo
 
