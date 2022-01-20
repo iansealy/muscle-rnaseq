@@ -9,6 +9,11 @@ Sequencing 18 pools of 3 zebrafish embryos with muscle mutations. 4 condition wi
 - srpk3_wt_ttnb_het
 - srpk3_wt_ttnb_wt
 
+Mutations are:
+
+- sa18907 / srpk3 (GRCz11:8:8336586 T->C)
+- sa5562 / ttnb (GRCz11:9:42861631 T->G)
+
 Samples went to CSCI for QC and library making on 2021-12-09
 
 QC done on 2021-12-12 and samples chosen for library making on 2021-12-13
@@ -377,4 +382,62 @@ cp $basedir/*/*.seff* $gitdir/seff
 
 rsync -va --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-* $gitdir/
 rsync -vaz --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-* $webhost:$webpath/
+```
+
+## Check genotypes
+
+```
+mkdir $basedir/genotyping
+module load bcftools/1.11
+bcftools mpileup -Ou --max-depth 10000 --annotate FORMAT/AD -r 8:8336586-8336586,9:42861631-42861631 \
+-f $basedir/reference/Danio_rerio.GRCz11.dna_sm.primary_assembly.fa $basedir/star2/*/Aligned.sortedByCoord.out.bam \
+| bcftools call -mv -Oz -o $basedir/genotyping/calls.vcf.gz
+module unload bcftools/1.11
+```
+
+Only get genotypes for srpk3:
+
+```
+gzip -cd $basedir/genotyping/calls.vcf.gz | tail -2 \
+| python -c "import sys; print('\n'.join(' '.join(c) for c in zip(*(l.split() for l in sys.stdin.readlines() if l.strip()))))" \
+| grep star | sed -e 's/.*star2.//' | sed -e 's/.Aligned.sortedByCoord.out.bam//' | sed -e 's/:.*:/ /' | column -t
+```
+
+```
+srpk3_hom_ttnb_het_1   1/1  0,27
+srpk3_hom_ttnb_het_10  1/1  0,39
+srpk3_hom_ttnb_het_2   1/1  0,41
+srpk3_hom_ttnb_het_7   1/1  0,39
+srpk3_hom_ttnb_het_8   1/1  0,18
+srpk3_hom_ttnb_het_9   1/1  0,35
+srpk3_hom_ttnb_wt_1    1/1  0,42
+srpk3_hom_ttnb_wt_4    1/1  0,30
+srpk3_hom_ttnb_wt_5    1/1  0,33
+srpk3_hom_ttnb_wt_6    1/1  0,59
+srpk3_hom_ttnb_wt_7    1/1  0,35
+srpk3_hom_ttnb_wt_8    1/1  0,34
+srpk3_wt_ttnb_het_1    ./.  0,0
+srpk3_wt_ttnb_het_2    0/1  2,0
+srpk3_wt_ttnb_het_3    0/1  1,0
+srpk3_wt_ttnb_het_7    ./.  0,0
+srpk3_wt_ttnb_het_8    0/1  1,0
+srpk3_wt_ttnb_het_9    ./.  0,0
+srpk3_wt_ttnb_wt_2     ./.  0,0
+srpk3_wt_ttnb_wt_3     ./.  0,0
+srpk3_wt_ttnb_wt_4     ./.  0,0
+srpk3_wt_ttnb_wt_5     0/1  2,0
+srpk3_wt_ttnb_wt_6     0/1  2,0
+srpk3_wt_ttnb_wt_7     0/0  3,0
+```
+
+- All srpk3_hom_* samples are clearly homs
+- Read depth for srpk3_wt is very low, but no ALT reads found
+
+## Archive
+
+```
+module load rclone/1.51.0
+rclone copy --progress $basedir/ drive-cam-muscle-rnaseq:
+rclone check --progress $basedir/ drive-cam-muscle-rnaseq:
+module unload rclone/1.51.0
 ```
