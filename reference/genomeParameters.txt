@@ -1,0 +1,16 @@
+### /usr/local/bin/STAR   --runMode genomeGenerate   --runThreadN 4   --genomeDir grcz11   --genomeFastaFiles Danio_rerio.GRCz11.dna_sm.primary_assembly.fa      --outFileNamePrefix grcz11.   --sjdbGTFfile Danio_rerio.GRCz11.105.gtf   --sjdbOverhang 149
+### GstrandBit 32
+versionGenome	2.7.1a
+genomeFastaFiles	Danio_rerio.GRCz11.dna_sm.primary_assembly.fa 
+genomeSAindexNbases	14
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	149
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	Danio_rerio.GRCz11.105.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	1678976971 11919002753

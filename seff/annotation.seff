@@ -1,0 +1,11 @@
+Job ID: 53408893
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:23
+CPU Efficiency: 1.69% of 00:22:40 core-walltime
+Job Wall-clock time: 00:22:40
+Memory Utilized: 200.03 MB
+Memory Efficiency: 5.85% of 3.34 GB
+

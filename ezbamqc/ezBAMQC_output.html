@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN">
+<html>
+<head><title>ezBAMQC Report</title>
+<style type="text/css">
+html,body{margin:0;padding:0;height:100%;width:1500px}
+div#header{background-color:#F3F2ED;}
+div#header h1{text-align:center; height:80px;line-height:80px;margin:0;padding-left:10px;}
+div#container{text-align:left;height:100%;width:1500px}
+div#navigation{background:#F6F0E0;}
+div#navigation{float:left;width:200px;height:100%}
+.menu-item ul { 
+background: #F6F0E0; 
+font-size: 13px; 
+line-height: 30px; 
+height: 0px; 
+list-style-type: none;overflow: hidden; 
+padding: 0px; }
+.menu-item:hover ul {  height: 220px; }
+ table{ margin:0;padding:0;width:1300px;table-layout:fixed;text-align:left; }
+table > thead > tr.tableizer-firstrow > th {  padding: 10px;  background: lavenderblush;} 
+table > tbody > tr > td{ padding: 10px; background: #f8f8f8; word-wrap: break word; } 
+div#footer{background:#BFBD93;}
+div#footer p{margin:0;padding:5px 10px}
+div#footer{clear:both;width:100%;text-align:center}
+div#main{float:right;width:1300px}
+a{text-decoration:none; color:#000000;}
+a:hover {text-decoration: underline; }
+</style> </head>
+<body>
+<div id ="container">
+<div id="header"><h1>ezBAMQC Report</h1><p text-align="left">Created On: 01-19-2022</p></div>
+<div id="wrapper">
+<div class="summary" id="navigation">
+<h2>Summary</h2>
+<ul>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_1</h4>
+<ul>
+<li><a href="#M00">Basic Statistics</a></li>
+<li><a href="#M01">Read Distribution</a></li>
+<li><a href="#M02">Mappability</a></li>
+<li><a href="#M03">Coverage</a></li>
+<li><a href="#M04">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_2</h4>
+<ul>
+<li><a href="#M10">Basic Statistics</a></li>
+<li><a href="#M11">Read Distribution</a></li>
+<li><a href="#M12">Mappability</a></li>
+<li><a href="#M13">Coverage</a></li>
+<li><a href="#M14">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_7</h4>
+<ul>
+<li><a href="#M20">Basic Statistics</a></li>
+<li><a href="#M21">Read Distribution</a></li>
+<li><a href="#M22">Mappability</a></li>
+<li><a href="#M23">Coverage</a></li>
+<li><a href="#M24">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_8</h4>
+<ul>
+<li><a href="#M30">Basic Statistics</a></li>
+<li><a href="#M31">Read Distribution</a></li>
+<li><a href="#M32">Mappability</a></li>
+<li><a href="#M33">Coverage</a></li>
+<li><a href="#M34">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_9</h4>
+<ul>
+<li><a href="#M40">Basic Statistics</a></li>
+<li><a href="#M41">Read Distribution</a></li>
+<li><a href="#M42">Mappability</a></li>
+<li><a href="#M43">Coverage</a></li>
+<li><a href="#M44">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_het_10</h4>
+<ul>
+<li><a href="#M50">Basic Statistics</a></li>
+<li><a href="#M51">Read Distribution</a></li>
+<li><a href="#M52">Mappability</a></li>
+<li><a href="#M53">Coverage</a></li>
+<li><a href="#M54">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_1</h4>
+<ul>
+<li><a href="#M60">Basic Statistics</a></li>
+<li><a href="#M61">Read Distribution</a></li>
+<li><a href="#M62">Mappability</a></li>
+<li><a href="#M63">Coverage</a></li>
+<li><a href="#M64">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_4</h4>
+<ul>
+<li><a href="#M70">Basic Statistics</a></li>
+<li><a href="#M71">Read Distribution</a></li>
+<li><a href="#M72">Mappability</a></li>
+<li><a href="#M73">Coverage</a></li>
+<li><a href="#M74">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_5</h4>
+<ul>
+<li><a href="#M80">Basic Statistics</a></li>
+<li><a href="#M81">Read Distribution</a></li>
+<li><a href="#M82">Mappability</a></li>
+<li><a href="#M83">Coverage</a></li>
+<li><a href="#M84">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_6</h4>
+<ul>
+<li><a href="#M90">Basic Statistics</a></li>
+<li><a href="#M91">Read Distribution</a></li>
+<li><a href="#M92">Mappability</a></li>
+<li><a href="#M93">Coverage</a></li>
+<li><a href="#M94">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_7</h4>
+<ul>
+<li><a href="#M100">Basic Statistics</a></li>
+<li><a href="#M101">Read Distribution</a></li>
+<li><a href="#M102">Mappability</a></li>
+<li><a href="#M103">Coverage</a></li>
+<li><a href="#M104">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_hom_ttnb_wt_8</h4>
+<ul>
+<li><a href="#M110">Basic Statistics</a></li>
+<li><a href="#M111">Read Distribution</a></li>
+<li><a href="#M112">Mappability</a></li>
+<li><a href="#M113">Coverage</a></li>
+<li><a href="#M114">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_1</h4>
+<ul>
+<li><a href="#M120">Basic Statistics</a></li>
+<li><a href="#M121">Read Distribution</a></li>
+<li><a href="#M122">Mappability</a></li>
+<li><a href="#M123">Coverage</a></li>
+<li><a href="#M124">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_2</h4>
+<ul>
+<li><a href="#M130">Basic Statistics</a></li>
+<li><a href="#M131">Read Distribution</a></li>
+<li><a href="#M132">Mappability</a></li>
+<li><a href="#M133">Coverage</a></li>
+<li><a href="#M134">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_3</h4>
+<ul>
+<li><a href="#M140">Basic Statistics</a></li>
+<li><a href="#M141">Read Distribution</a></li>
+<li><a href="#M142">Mappability</a></li>
+<li><a href="#M143">Coverage</a></li>
+<li><a href="#M144">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_7</h4>
+<ul>
+<li><a href="#M150">Basic Statistics</a></li>
+<li><a href="#M151">Read Distribution</a></li>
+<li><a href="#M152">Mappability</a></li>
+<li><a href="#M153">Coverage</a></li>
+<li><a href="#M154">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_8</h4>
+<ul>
+<li><a href="#M160">Basic Statistics</a></li>
+<li><a href="#M161">Read Distribution</a></li>
+<li><a href="#M162">Mappability</a></li>
+<li><a href="#M163">Coverage</a></li>
+<li><a href="#M164">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_het_9</h4>
+<ul>
+<li><a href="#M170">Basic Statistics</a></li>
+<li><a href="#M171">Read Distribution</a></li>
+<li><a href="#M172">Mappability</a></li>
+<li><a href="#M173">Coverage</a></li>
+<li><a href="#M174">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_2</h4>
+<ul>
+<li><a href="#M180">Basic Statistics</a></li>
+<li><a href="#M181">Read Distribution</a></li>
+<li><a href="#M182">Mappability</a></li>
+<li><a href="#M183">Coverage</a></li>
+<li><a href="#M184">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_3</h4>
+<ul>
+<li><a href="#M190">Basic Statistics</a></li>
+<li><a href="#M191">Read Distribution</a></li>
+<li><a href="#M192">Mappability</a></li>
+<li><a href="#M193">Coverage</a></li>
+<li><a href="#M194">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_4</h4>
+<ul>
+<li><a href="#M200">Basic Statistics</a></li>
+<li><a href="#M201">Read Distribution</a></li>
+<li><a href="#M202">Mappability</a></li>
+<li><a href="#M203">Coverage</a></li>
+<li><a href="#M204">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_5</h4>
+<ul>
+<li><a href="#M210">Basic Statistics</a></li>
+<li><a href="#M211">Read Distribution</a></li>
+<li><a href="#M212">Mappability</a></li>
+<li><a href="#M213">Coverage</a></li>
+<li><a href="#M214">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_6</h4>
+<ul>
+<li><a href="#M220">Basic Statistics</a></li>
+<li><a href="#M221">Read Distribution</a></li>
+<li><a href="#M222">Mappability</a></li>
+<li><a href="#M223">Coverage</a></li>
+<li><a href="#M224">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item">
+<h4>srpk3_wt_ttnb_wt_7</h4>
+<ul>
+<li><a href="#M230">Basic Statistics</a></li>
+<li><a href="#M231">Read Distribution</a></li>
+<li><a href="#M232">Mappability</a></li>
+<li><a href="#M233">Coverage</a></li>
+<li><a href="#M234">Read Length and Insertion Size</a></li>
+</ul></div></li>
+<li><div class="menu-item"><a href="#M220"><h4>Sample Correlation</h4></a></div></li>
+</ul>
+</div>
+<div id="main" >
+<h2>srpk3_hom_ttnb_het_1</h2>
+<div class="module"><h2 id="M00">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>15792002</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>15104613</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>15104613</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>15104613</td></tr>
+<tr><td>Multi-reads</td><td>687388</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7337069</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>7767544</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>7767544</td></tr>
+<tr><td>Reverse Reads</td><td>7337069</td></tr>
+<tr><td>Splice Reads</td><td>8377809</td></tr>
+<tr><td>Non-Splice Reads</td><td>6726804</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1383</td></tr></tbody></table></div>
+<div class="module"><h2 id="M01">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_1.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_1.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M02">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_1.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_1.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M03">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_1.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_1.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M04">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_1.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_1.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_het_2</h2>
+<div class="module"><h2 id="M10">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>23046997</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>22047197</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>22047197</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>22047197</td></tr>
+<tr><td>Multi-reads</td><td>999799</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>10844475</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>11202722</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>11202722</td></tr>
+<tr><td>Reverse Reads</td><td>10844475</td></tr>
+<tr><td>Splice Reads</td><td>12408586</td></tr>
+<tr><td>Non-Splice Reads</td><td>9638611</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2456</td></tr></tbody></table></div>
+<div class="module"><h2 id="M11">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_2.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_2.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M12">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_2.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_2.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M13">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_2.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_2.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M14">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_2.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_2.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_het_7</h2>
+<div class="module"><h2 id="M20">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18476302</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>17582817</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>17582817</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>17582817</td></tr>
+<tr><td>Multi-reads</td><td>893484</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8520362</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>9062455</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>9062455</td></tr>
+<tr><td>Reverse Reads</td><td>8520362</td></tr>
+<tr><td>Splice Reads</td><td>9752704</td></tr>
+<tr><td>Non-Splice Reads</td><td>7830113</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1462</td></tr></tbody></table></div>
+<div class="module"><h2 id="M21">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_7.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_7.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M22">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_7.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_7.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M23">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_7.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_7.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M24">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_7.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_7.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_het_8</h2>
+<div class="module"><h2 id="M30">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>14160853</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>13517055</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>13517055</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>13517055</td></tr>
+<tr><td>Multi-reads</td><td>643797</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>6598025</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>6919030</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>6919030</td></tr>
+<tr><td>Reverse Reads</td><td>6598025</td></tr>
+<tr><td>Splice Reads</td><td>7466011</td></tr>
+<tr><td>Non-Splice Reads</td><td>6051044</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>925</td></tr></tbody></table></div>
+<div class="module"><h2 id="M31">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_8.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_8.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M32">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_8.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_8.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M33">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_8.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_8.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M34">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_8.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_8.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_het_9</h2>
+<div class="module"><h2 id="M40">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>19758093</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>18913001</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>18913001</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>18913001</td></tr>
+<tr><td>Multi-reads</td><td>845091</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>9325813</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>9587188</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>9587188</td></tr>
+<tr><td>Reverse Reads</td><td>9325813</td></tr>
+<tr><td>Splice Reads</td><td>10558947</td></tr>
+<tr><td>Non-Splice Reads</td><td>8354054</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2617</td></tr></tbody></table></div>
+<div class="module"><h2 id="M41">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_9.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_9.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M42">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_9.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_9.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M43">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_9.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_9.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M44">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_9.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_9.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_het_10</h2>
+<div class="module"><h2 id="M50">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18680448</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>17851852</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>17851852</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>17851852</td></tr>
+<tr><td>Multi-reads</td><td>828595</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8765057</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>9086795</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>9086795</td></tr>
+<tr><td>Reverse Reads</td><td>8765057</td></tr>
+<tr><td>Splice Reads</td><td>10085991</td></tr>
+<tr><td>Non-Splice Reads</td><td>7765861</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1414</td></tr></tbody></table></div>
+<div class="module"><h2 id="M51">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_10.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_het_10.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M52">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_10.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_10.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M53">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_10.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_10.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M54">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_het_10.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_het_10.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_1</h2>
+<div class="module"><h2 id="M60">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18367650</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>17558580</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>17558580</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>17558580</td></tr>
+<tr><td>Multi-reads</td><td>809069</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8610333</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>8948247</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>8948247</td></tr>
+<tr><td>Reverse Reads</td><td>8610333</td></tr>
+<tr><td>Splice Reads</td><td>9909824</td></tr>
+<tr><td>Non-Splice Reads</td><td>7648756</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2212</td></tr></tbody></table></div>
+<div class="module"><h2 id="M61">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M62">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M63">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M64">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_1.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_4</h2>
+<div class="module"><h2 id="M70">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>16760529</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>16003496</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>16003496</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>16003496</td></tr>
+<tr><td>Multi-reads</td><td>757032</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7855657</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>8147839</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>8147839</td></tr>
+<tr><td>Reverse Reads</td><td>7855657</td></tr>
+<tr><td>Splice Reads</td><td>8802205</td></tr>
+<tr><td>Non-Splice Reads</td><td>7201291</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1686</td></tr></tbody></table></div>
+<div class="module"><h2 id="M71">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M72">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M73">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M74">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_4.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_5</h2>
+<div class="module"><h2 id="M80">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>14047721</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>13423766</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>13423766</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>13423766</td></tr>
+<tr><td>Multi-reads</td><td>623954</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>6587121</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>6836645</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>6836645</td></tr>
+<tr><td>Reverse Reads</td><td>6587121</td></tr>
+<tr><td>Splice Reads</td><td>7558289</td></tr>
+<tr><td>Non-Splice Reads</td><td>5865477</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1500</td></tr></tbody></table></div>
+<div class="module"><h2 id="M81">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M82">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M83">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M84">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_5.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_6</h2>
+<div class="module"><h2 id="M90">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>24787336</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>23708437</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>23708437</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>23708437</td></tr>
+<tr><td>Multi-reads</td><td>1078898</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11675104</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>12033333</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>12033333</td></tr>
+<tr><td>Reverse Reads</td><td>11675104</td></tr>
+<tr><td>Splice Reads</td><td>13111933</td></tr>
+<tr><td>Non-Splice Reads</td><td>10596504</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1993</td></tr></tbody></table></div>
+<div class="module"><h2 id="M91">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M92">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M93">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M94">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_6.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_7</h2>
+<div class="module"><h2 id="M100">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18900690</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>18052697</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>18052697</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>18052697</td></tr>
+<tr><td>Multi-reads</td><td>847992</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8784320</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>9268377</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>9268377</td></tr>
+<tr><td>Reverse Reads</td><td>8784320</td></tr>
+<tr><td>Splice Reads</td><td>9995668</td></tr>
+<tr><td>Non-Splice Reads</td><td>8057029</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1660</td></tr></tbody></table></div>
+<div class="module"><h2 id="M101">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M102">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M103">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M104">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_7.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_hom_ttnb_wt_8</h2>
+<div class="module"><h2 id="M110">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>14215255</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>13591156</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>13591156</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>13591156</td></tr>
+<tr><td>Multi-reads</td><td>624098</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>6645344</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>6945812</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>6945812</td></tr>
+<tr><td>Reverse Reads</td><td>6645344</td></tr>
+<tr><td>Splice Reads</td><td>7499145</td></tr>
+<tr><td>Non-Splice Reads</td><td>6092011</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1324</td></tr></tbody></table></div>
+<div class="module"><h2 id="M111">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M112">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M113">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M114">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_hom_ttnb_wt_8.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_1</h2>
+<div class="module"><h2 id="M120">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>17008179</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>16281661</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>16281661</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>16281661</td></tr>
+<tr><td>Multi-reads</td><td>726517</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7977321</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>8304340</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>8304340</td></tr>
+<tr><td>Reverse Reads</td><td>7977321</td></tr>
+<tr><td>Splice Reads</td><td>9167924</td></tr>
+<tr><td>Non-Splice Reads</td><td>7113737</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1812</td></tr></tbody></table></div>
+<div class="module"><h2 id="M121">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_1.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_1.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M122">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_1.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_1.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M123">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_1.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_1.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M124">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_1.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_1.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_2</h2>
+<div class="module"><h2 id="M130">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>15527853</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>14831685</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>14831685</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>14831685</td></tr>
+<tr><td>Multi-reads</td><td>696167</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7223908</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>7607777</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>7607777</td></tr>
+<tr><td>Reverse Reads</td><td>7223908</td></tr>
+<tr><td>Splice Reads</td><td>8192911</td></tr>
+<tr><td>Non-Splice Reads</td><td>6638774</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1515</td></tr></tbody></table></div>
+<div class="module"><h2 id="M131">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_2.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_2.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M132">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_2.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_2.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M133">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_2.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_2.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M134">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_2.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_2.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_3</h2>
+<div class="module"><h2 id="M140">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>12567526</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>12023906</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>12023906</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>12023906</td></tr>
+<tr><td>Multi-reads</td><td>543619</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>5935262</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>6088644</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>6088644</td></tr>
+<tr><td>Reverse Reads</td><td>5935262</td></tr>
+<tr><td>Splice Reads</td><td>6725193</td></tr>
+<tr><td>Non-Splice Reads</td><td>5298713</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1058</td></tr></tbody></table></div>
+<div class="module"><h2 id="M141">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_3.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_3.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M142">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_3.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_3.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M143">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_3.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_3.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M144">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_3.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_3.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_7</h2>
+<div class="module"><h2 id="M150">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>23756398</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>22706942</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>22706942</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>22706942</td></tr>
+<tr><td>Multi-reads</td><td>1049455</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11112003</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>11594939</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>11594939</td></tr>
+<tr><td>Reverse Reads</td><td>11112003</td></tr>
+<tr><td>Splice Reads</td><td>12516725</td></tr>
+<tr><td>Non-Splice Reads</td><td>10190217</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1389</td></tr></tbody></table></div>
+<div class="module"><h2 id="M151">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_7.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_7.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M152">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_7.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_7.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M153">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_7.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_7.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M154">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_7.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_7.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_8</h2>
+<div class="module"><h2 id="M160">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18680928</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>17861756</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>17861756</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>17861756</td></tr>
+<tr><td>Multi-reads</td><td>819171</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8672029</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>9189727</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>9189727</td></tr>
+<tr><td>Reverse Reads</td><td>8672029</td></tr>
+<tr><td>Splice Reads</td><td>9878655</td></tr>
+<tr><td>Non-Splice Reads</td><td>7983101</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1512</td></tr></tbody></table></div>
+<div class="module"><h2 id="M161">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_8.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_8.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M162">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_8.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_8.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M163">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_8.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_8.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M164">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_8.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_8.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_het_9</h2>
+<div class="module"><h2 id="M170">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>24231153</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>23200393</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>23200393</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>23200393</td></tr>
+<tr><td>Multi-reads</td><td>1030759</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11415599</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>11784794</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>11784794</td></tr>
+<tr><td>Reverse Reads</td><td>11415599</td></tr>
+<tr><td>Splice Reads</td><td>12858629</td></tr>
+<tr><td>Non-Splice Reads</td><td>10341764</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2678</td></tr></tbody></table></div>
+<div class="module"><h2 id="M171">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_9.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_het_9.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M172">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_9.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_9.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M173">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_9.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_9.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M174">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_het_9.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_het_9.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_2</h2>
+<div class="module"><h2 id="M180">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>15046962</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>14390896</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>14390896</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>14390896</td></tr>
+<tr><td>Multi-reads</td><td>656065</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7022794</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>7368102</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>7368102</td></tr>
+<tr><td>Reverse Reads</td><td>7022794</td></tr>
+<tr><td>Splice Reads</td><td>8051408</td></tr>
+<tr><td>Non-Splice Reads</td><td>6339488</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1117</td></tr></tbody></table></div>
+<div class="module"><h2 id="M181">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M182">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M183">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M184">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_2.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_3</h2>
+<div class="module"><h2 id="M190">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>18235274</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>17466121</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>17466121</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>17466121</td></tr>
+<tr><td>Multi-reads</td><td>769152</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>8522016</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>8944105</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>8944105</td></tr>
+<tr><td>Reverse Reads</td><td>8522016</td></tr>
+<tr><td>Splice Reads</td><td>9586828</td></tr>
+<tr><td>Non-Splice Reads</td><td>7879293</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1806</td></tr></tbody></table></div>
+<div class="module"><h2 id="M191">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M192">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M193">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M194">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_3.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_4</h2>
+<div class="module"><h2 id="M200">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>25886281</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>24674617</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>24674617</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>24674617</td></tr>
+<tr><td>Multi-reads</td><td>1211663</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11972039</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>12702578</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>12702578</td></tr>
+<tr><td>Reverse Reads</td><td>11972039</td></tr>
+<tr><td>Splice Reads</td><td>13610887</td></tr>
+<tr><td>Non-Splice Reads</td><td>11063730</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1724</td></tr></tbody></table></div>
+<div class="module"><h2 id="M201">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M202">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M203">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M204">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_4.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_5</h2>
+<div class="module"><h2 id="M210">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>17044005</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>16301549</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>16301549</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>16301549</td></tr>
+<tr><td>Multi-reads</td><td>742455</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>7992655</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>8308894</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>8308894</td></tr>
+<tr><td>Reverse Reads</td><td>7992655</td></tr>
+<tr><td>Splice Reads</td><td>9164909</td></tr>
+<tr><td>Non-Splice Reads</td><td>7136640</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>1369</td></tr></tbody></table></div>
+<div class="module"><h2 id="M211">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M212">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M213">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M214">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_5.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_6</h2>
+<div class="module"><h2 id="M220">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>25851030</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>24722976</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>24722976</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>24722976</td></tr>
+<tr><td>Multi-reads</td><td>1128053</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11992423</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>12730553</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>12730553</td></tr>
+<tr><td>Reverse Reads</td><td>11992423</td></tr>
+<tr><td>Splice Reads</td><td>13632023</td></tr>
+<tr><td>Non-Splice Reads</td><td>11090953</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2240</td></tr></tbody></table></div>
+<div class="module"><h2 id="M221">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M222">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M223">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M224">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_6.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<h2>srpk3_wt_ttnb_wt_7</h2>
+<div class="module"><h2 id="M230">Basic Statistics</h2>
+<table>
+<thead><tr class="tableizer-firstrow">
+<th>Measure</th><th>Value</th></tr></thead>
+<tbody><tr><td>Total Reads</td><td>24072062</td></tr>
+<tr><td>Uniquely Mapped Pairs</td><td>23018710</td></tr>
+<tr><td>Uniquely Mapped Read1</td><td>23018710</td></tr>
+<tr><td>Uiquely Mapped Read2</td><td>23018710</td></tr>
+<tr><td>Multi-reads</td><td>1053351</td></tr>
+<tr><td>Unmapped Read1</td><td>0</td></tr>
+<tr><td>Unmapped Read2</td><td>0</td></tr>
+<tr><td>Number of read mapped "+,-" </td><td>11220594</td></tr>
+<tr><td>Number of read mapped "+,+" </td><td>0</td></tr>
+<tr><td>Number of read mapped "-,+" </td><td>11798116</td></tr>
+<tr><td>Number of read mapped "-,-" </td><td>0</td></tr>
+<tr><td>Low Quality Read1</td><td>0</td></tr>
+<tr><td>Low Quality Read2</td><td>0</td></tr>
+<tr><td>Forward Reads</td><td>11798116</td></tr>
+<tr><td>Reverse Reads</td><td>11220594</td></tr>
+<tr><td>Splice Reads</td><td>12842962</td></tr>
+<tr><td>Non-Splice Reads</td><td>10175748</td></tr>
+<tr><td>Pairs mapped to different chromosomes</td><td>0</td></tr>
+<tr><td>rRNA Reads</td><td>2094</td></tr></tbody></table></div>
+<div class="module"><h2 id="M231">Read Distribution</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.read_distr.png" alt="Read Distribution"><img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.read_distr_pie.png" alt="Read Distribution"></p></div>
+<div class="module"><h2 id="M232">Mappability</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.clipping_profile.png" alt="Mappablity Profile"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.mapq_profile.png" alt="MapQ Profile"></p></div>
+<div class="module"><h2 id="M233">Coverage</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.geneBodyCoverage.png" alt="Read Coverage"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.TransCoverage.png" alt="Read Coverage"></p></div>
+<div class="module"><h2 id="M234">Read Length and Insertion Size</h2>
+<p><img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.readlen_profile.png" alt="Read Length"> <img class="indented" src="./figs/srpk3_wt_ttnb_wt_7.inner_distance_plot.png" alt="Insertion Size"></p></div>
+<div class="Smp_corr"><h2 id="M220">Sample Correlation and Quality</h2>
+<p><img class="indented" src="./figs/smp_corr.png" alt="Sample Correlation"><img class="indented" src="./figs/smp_qual.png" alt="Sample Correlation"></p>
+<h2 id="M220">Sample Coverage and Insert size</h2>
+<p><img class="indented" src="./figs/smp_cov.png" alt="Sample Coverage"><img class="indented" src="./figs/smp_inner_dist.png" alt="Sample insert size"></p></div>
+<h2 id="M220">Sample Variation</h2>
+<p><img class="indented" src="./figs/smp_reproducibility.png" alt="Sample Variation"><img class="indented" src="./figs/smp_var.png" alt="Sample Variation"></p></div>
+</div>
+<div id="footer"><p>Produced by Bioinformatics Shared Resource at CSHL </p></div></div></div></body></html>
+

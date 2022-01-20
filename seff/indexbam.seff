@@ -1,0 +1,288 @@
+Job ID: 53416112
+Array Job ID: 53416112_24
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:06
+CPU Efficiency: 95.65% of 00:01:09 core-walltime
+Job Wall-clock time: 00:01:09
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416116
+Array Job ID: 53416112_1
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:47
+CPU Efficiency: 94.00% of 00:00:50 core-walltime
+Job Wall-clock time: 00:00:50
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416117
+Array Job ID: 53416112_2
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:08
+CPU Efficiency: 94.44% of 00:01:12 core-walltime
+Job Wall-clock time: 00:01:12
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416118
+Array Job ID: 53416112_3
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:56
+CPU Efficiency: 93.33% of 00:01:00 core-walltime
+Job Wall-clock time: 00:01:00
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416119
+Array Job ID: 53416112_4
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:43
+CPU Efficiency: 95.56% of 00:00:45 core-walltime
+Job Wall-clock time: 00:00:45
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416120
+Array Job ID: 53416112_5
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:56
+CPU Efficiency: 94.92% of 00:00:59 core-walltime
+Job Wall-clock time: 00:00:59
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416121
+Array Job ID: 53416112_6
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:56
+CPU Efficiency: 94.92% of 00:00:59 core-walltime
+Job Wall-clock time: 00:00:59
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416122
+Array Job ID: 53416112_7
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:55
+CPU Efficiency: 94.83% of 00:00:58 core-walltime
+Job Wall-clock time: 00:00:58
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416123
+Array Job ID: 53416112_8
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:55
+CPU Efficiency: 93.22% of 00:00:59 core-walltime
+Job Wall-clock time: 00:00:59
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416124
+Array Job ID: 53416112_9
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:46
+CPU Efficiency: 92.00% of 00:00:50 core-walltime
+Job Wall-clock time: 00:00:50
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416125
+Array Job ID: 53416112_10
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:15
+CPU Efficiency: 94.94% of 00:01:19 core-walltime
+Job Wall-clock time: 00:01:19
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416126
+Array Job ID: 53416112_11
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:57
+CPU Efficiency: 93.44% of 00:01:01 core-walltime
+Job Wall-clock time: 00:01:01
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416127
+Array Job ID: 53416112_12
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:43
+CPU Efficiency: 91.49% of 00:00:47 core-walltime
+Job Wall-clock time: 00:00:47
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416128
+Array Job ID: 53416112_13
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:50
+CPU Efficiency: 92.59% of 00:00:54 core-walltime
+Job Wall-clock time: 00:00:54
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416129
+Array Job ID: 53416112_14
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:47
+CPU Efficiency: 94.00% of 00:00:50 core-walltime
+Job Wall-clock time: 00:00:50
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416130
+Array Job ID: 53416112_15
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:42
+CPU Efficiency: 91.30% of 00:00:46 core-walltime
+Job Wall-clock time: 00:00:46
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416131
+Array Job ID: 53416112_16
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:09
+CPU Efficiency: 95.83% of 00:01:12 core-walltime
+Job Wall-clock time: 00:01:12
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416132
+Array Job ID: 53416112_17
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:55
+CPU Efficiency: 93.22% of 00:00:59 core-walltime
+Job Wall-clock time: 00:00:59
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416133
+Array Job ID: 53416112_18
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:11
+CPU Efficiency: 94.67% of 00:01:15 core-walltime
+Job Wall-clock time: 00:01:15
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416134
+Array Job ID: 53416112_19
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:45
+CPU Efficiency: 93.75% of 00:00:48 core-walltime
+Job Wall-clock time: 00:00:48
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416135
+Array Job ID: 53416112_20
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:54
+CPU Efficiency: 94.74% of 00:00:57 core-walltime
+Job Wall-clock time: 00:00:57
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416136
+Array Job ID: 53416112_21
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:11
+CPU Efficiency: 95.95% of 00:01:14 core-walltime
+Job Wall-clock time: 00:01:14
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416137
+Array Job ID: 53416112_22
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:47
+CPU Efficiency: 94.00% of 00:00:50 core-walltime
+Job Wall-clock time: 00:00:50
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 53416138
+Array Job ID: 53416112_23
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:01:11
+CPU Efficiency: 94.67% of 00:01:15 core-walltime
+Job Wall-clock time: 00:01:15
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+

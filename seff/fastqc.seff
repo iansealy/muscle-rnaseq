@@ -1,0 +1,12 @@
+Job ID: 53391437
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 12
+CPU Utilized: 02:41:08
+CPU Efficiency: 74.60% of 03:36:00 core-walltime
+Job Wall-clock time: 00:18:00
+Memory Utilized: 2.09 GB
+Memory Efficiency: 5.20% of 40.08 GB
+

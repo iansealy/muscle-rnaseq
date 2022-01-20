@@ -1,0 +1,12 @@
+Job ID: 53427230
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 56
+CPU Utilized: 11-09:58:23
+CPU Efficiency: 60.72% of 18-19:12:16 core-walltime
+Job Wall-clock time: 08:03:26
+Memory Utilized: 25.86 GB
+Memory Efficiency: 48.97% of 52.81 GB
+
