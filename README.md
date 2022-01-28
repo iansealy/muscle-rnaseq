@@ -353,6 +353,25 @@ srpk3_hom_ttnb_wt vs srpk3_wt_ttnb_wt   572
 srpk3_wt_ttnb_het vs srpk3_wt_ttnb_wt   128
 ```
 
+## Make count plots
+
+```
+cp $gitdir/scripts/countplots.R $gitdir/scripts/countplots.sh $basedir/deseq2
+for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_wt; do
+  e=`echo "$comp" | awk -F':' '{ print $1 }'`
+  c=`echo "$comp" | awk -F':' '{ print $2 }'`
+  echo "Rscript countplots.R -s $basedir/deseq2-all/samples.tsv -o $basedir/deseq2-${e}_vs_$c --all $basedir/deseq2-all/all.tsv --sig $basedir/deseq2-${e}_vs_$c/sig.tsv" >> $basedir/deseq2/countplots.txt
+done
+
+sbatch $gitdir/sbatch/countplots.sbatch
+
+process-seff $basedir/deseq2/countplots
+cp $basedir/*/*.seff* $gitdir/seff
+
+rsync -va $basedir/deseq2-* $gitdir/
+rsync -vaz $basedir/deseq2-* $webhost:$webpath/
+```
+
 ## Run ZFA enrichment
 
 ```

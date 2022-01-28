@@ -284,7 +284,7 @@ for (i in seq.int(nrow(filter(res, adjp < 0.05)))) {
   names(countData) <- gsub(" normalised.*$", "", names(countData))
   counts <- pivot_longer(countData, everything(), names_to="sample", values_to="count")
   counts <- inner_join(counts, samples, by="sample")
-  counts$sample <- fct_reorder2(counts$sample, counts$sample, counts$condition)
+  counts$sample <- fct_relevel(counts$sample, samples$sample)
   title <- sprintf("%s / %s\n%s:%d-%d\np = %.3g", res$Gene[i], res$Name[i], res$Chr[i], res$Start[i], res$End[i], res$adjp[i])
   p <- ggplot(data = counts, aes_(x = as.name("sample"), y = as.name("count"))) +
     geom_point(aes_(fill = as.name("condition")), size = 3, shape = 21, colour = "black") +
