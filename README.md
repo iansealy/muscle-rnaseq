@@ -549,7 +549,101 @@ srpk3_wt_ttnb_wt_7            7 <       7 >
 
 ```
 module load rclone/1.51.0
-rclone copy --progress $basedir/ drive-cam-muscle-rnaseq:
+rclone sync --progress $basedir/ drive-cam-muscle-rnaseq:
 rclone check --progress $basedir/ drive-cam-muscle-rnaseq:
 module unload rclone/1.51.0
 ```
+
+## Run rMATS
+
+```
+mkdir -p $basedir/rmats
+
+for sample in `cut -f1 $gitdir/samples.tsv`; do
+  mkdir $basedir/rmats/$sample
+  echo "$basedir/star2/$sample/Aligned.sortedByCoord.out.bam" > $basedir/rmats/$sample/prep.txt
+  echo -n "rmats.py --gtf ../reference/Danio_rerio.GRCz11.105.gtf --b1 $basedir/rmats/$sample/prep.txt "
+  echo -n "--od $basedir/rmats/$sample --tmp $basedir/rmats/$sample "
+  echo "-t paired --libType fr-firststrand --readLength 150 --variable-read-length --task prep --novelSS --allow-clipping"
+done > $basedir/rmats/prep.txt
+
+sbatch $gitdir/sbatch/rmatsprep.sbatch
+
+process-seff $basedir/rmats/rmatsprep
+cp $basedir/*/*.seff* $gitdir/seff
+
+for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_wt; do
+  e=`echo "$comp" | awk -F':' '{ print $1 }'`
+  c=`echo "$comp" | awk -F':' '{ print $2 }'`
+  mkdir -p $basedir/rmats-${e}_vs_$c/tmp
+  for sample in `grep "$e" $gitdir/samples.tsv | cut -f1`; do
+    cp $basedir/rmats/$sample/*.rmats $basedir/rmats-${e}_vs_$c/tmp/$sample.rmats
+    echo "$basedir/star2/$sample/Aligned.sortedByCoord.out.bam"
+  done | tr '\n' ',' | sed -e 's/,$//' > $basedir/rmats-${e}_vs_$c/b1.txt
+  for sample in `grep "$c" $gitdir/samples.tsv | cut -f1`; do
+    cp $basedir/rmats/$sample/*.rmats $basedir/rmats-${e}_vs_$c/tmp/$sample.rmats
+    echo "$basedir/star2/$sample/Aligned.sortedByCoord.out.bam"
+  done | tr '\n' ',' | sed -e 's/,$//' > $basedir/rmats-${e}_vs_$c/b2.txt
+  echo -n "rmats.py --gtf ../reference/Danio_rerio.GRCz11.105.gtf --b1 $basedir/rmats-${e}_vs_$c/b1.txt --b2 $basedir/rmats-${e}_vs_$c/b2.txt "
+  echo -n "--od $basedir/rmats-${e}_vs_$c --tmp $basedir/rmats-${e}_vs_$c/tmp "
+  echo "-t paired --libType fr-firststrand --readLength 150 --variable-read-length --task post --novelSS --allow-clipping"
+done > $basedir/rmats/post.txt
+
+sbatch $gitdir/sbatch/rmatspost.sbatch
+
+process-seff $basedir/rmats/rmatspost
+cp $basedir/*/*.seff* $gitdir/seff
+
+for comp in `ls -d $basedir/rmats-* | sed -e 's/.*\///'`; do
+  mkdir $gitdir/$comp
+  cp $basedir/$comp/*.txt $gitdir/$comp
+done
+
+scp -r $gitdir/rmats-* $webhost:$webpath
+```
+
+## Run rMATS on random groups of samples
+
+```
+for comp in `seq 10`; do
+  mkdir -p $basedir/rmats-random-$comp/tmp
+  sort -R $gitdir/samples.tsv | cut -f1 > $basedir/rmats-random-$comp/tmp/samples.tsv
+  for sample in `head -6 $basedir/rmats-random-$comp/tmp/samples.tsv`; do
+    cp $basedir/rmats/$sample/*.rmats $basedir/rmats-random-$comp/tmp/$sample.rmats
+    echo "$basedir/star2/$sample/Aligned.sortedByCoord.out.bam"
+  done | tr '\n' ',' | sed -e 's/,$//' > $basedir/rmats-random-$comp/b1.txt
+  for sample in `tail -6 $basedir/rmats-random-$comp/tmp/samples.tsv`; do
+    cp $basedir/rmats/$sample/*.rmats $basedir/rmats-random-$comp/tmp/$sample.rmats
+    echo "$basedir/star2/$sample/Aligned.sortedByCoord.out.bam"
+  done | tr '\n' ',' | sed -e 's/,$//' > $basedir/rmats-random-$comp/b2.txt
+  echo -n "rmats.py --gtf ../reference/Danio_rerio.GRCz11.105.gtf --b1 $basedir/rmats-random-$comp/b1.txt --b2 $basedir/rmats-random-$comp/b2.txt "
+  echo -n "--od $basedir/rmats-random-$comp --tmp $basedir/rmats-random-$comp/tmp "
+  echo "-t paired --libType fr-firststrand --readLength 150 --variable-read-length --task post --novelSS --allow-clipping"
+done > $basedir/rmats/random.txt
+
+sbatch $gitdir/sbatch/rmatsrandom.sbatch
+
+process-seff $basedir/rmats/rmatsrandom
+cp $basedir/*/*.seff* $gitdir/seff
+```
+
+## Plot SignificantEventsJC from rMATS
+
+```
+echo -e "Comparison\tEvent\tSig\tType" > $gitdir/rmats.tsv
+for comp in `ls -d $basedir/rmats-* | sed -e 's/.*rmats-//'`; do
+  cut -f1,4 $basedir/rmats-$comp/summary.txt | tail -n +2 | awk "{ print \"$comp\\t\" \$0 }"
+done | awk '{ if ($1 ~ /random/) { print $0 "\trandom" } else { print $0 "\texpt" } }' \
+| sort -V >> $gitdir/rmats.tsv
+
+cd $gitdir
+module load $HOME/privatemodules/R/4.0.3
+Rscript scripts/plot-rmats.R
+module unload $HOME/privatemodules/R/4.0.3
+
+scp -r $gitdir/rmats.pdf $webhost:$webpath
+```
+
+View https://temp.buschlab.org/muscle-rnaseq/rmats.pdf
+
+Different types of events: http://rnaseq-mats.sourceforge.net/splicing.jpg
