@@ -672,3 +672,55 @@ done
 
 rsync -vaz --delete $gitdir/rmats-* $webhost:$webpath/
 ```
+
+## Run ZFA enrichment
+
+```
+for dir in `find $basedir/rmats-* -maxdepth 0 | grep -v random`; do
+  for event in A3SS A5SS MXE RI SE; do
+    echo "cd $dir; mkdir $event; cd $event; zfa ../$event.sig.tsv ../$event.all.tsv; rm table-tmp.sig-Parent-Child-Union-Bonferroni.txt"
+  done
+done > $basedir/zfa/zfarmats.txt
+
+sbatch $gitdir/sbatch/zfarmats.sbatch
+
+process-seff $basedir/zfa/zfarmats
+cp $basedir/*/*.seff* $gitdir/seff
+
+for dir in `find $basedir/rmats-* -maxdepth 0 | grep -v random`; do
+  for event in A3SS A5SS MXE RI SE; do
+    mv $dir/$event/zfa.all.tsv $dir/$event.zfa.all.tsv
+    mv $dir/$event/zfa.sig.tsv $dir/$event.zfa.sig.tsv
+    rmdir $dir/$event
+  done
+  comp=`echo "$dir" | sed -e 's/.*\///'`
+  cp $dir/*.zfa.sig.tsv $gitdir/$comp
+done
+
+rsync -vaz --delete $gitdir/rmats-* $webhost:$webpath/
+```
+
+## Run topGO
+
+```
+cp $gitdir/scripts/topgormats.sh $basedir/topgo
+for dir in `find $basedir/rmats-* -maxdepth 0 | grep -v random`; do
+  for event in A3SS A5SS MXE RI SE; do
+    echo -e "$dir\t$event"
+  done
+done > $basedir/topgo/topgormats.txt
+
+sbatch $gitdir/sbatch/topgormats.sbatch
+
+process-seff $basedir/topgo/topgormats
+cp $basedir/*/*.seff* $gitdir/seff
+
+for comp in `ls -d $gitdir/rmats-* | sed -e 's/.*\///'`; do
+  for event in A3SS A5SS MXE RI SE; do
+    cp -r $basedir/$comp/$event.topgo $gitdir/$comp
+    find $gitdir/$comp -type f | grep -vE '(tsv|pdf)$' | xargs rm
+  done
+done
+
+rsync -vaz --delete $gitdir/rmats-* $webhost:$webpath/
+```
