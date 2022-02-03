@@ -647,3 +647,28 @@ scp -r $gitdir/rmats.pdf $webhost:$webpath
 View https://temp.buschlab.org/muscle-rnaseq/rmats.pdf
 
 Different types of events: http://rnaseq-mats.sourceforge.net/splicing.jpg
+
+## Reformat rMATS output
+
+```
+for comp in `ls -d $gitdir/rmats-* | sed -e 's/.*\///'`; do
+  mkdir -p $gitdir/$comp/output
+  mv $gitdir/$comp/*.txt $gitdir/$comp/output
+  for event in A3SS A5SS MXE RI SE; do
+    echo -e "Gene\tpval\tFDR\tChr\tStart\tEnd\tStrand\tBiotype\tName\tDescription" > $gitdir/$comp/$event.all.tsv
+    echo -e "Gene\tpval\tFDR\tChr\tStart\tEnd\tStrand\tBiotype\tName\tDescription" > $gitdir/$comp/$event.sig.tsv
+    cols="2,19,20"
+    if [[ "$event" == "MXE" ]]; then
+      cols="2,21,22"
+    fi
+    cut -f"$cols" $gitdir/$comp/output/$event.MATS.JC.txt | sed -e 's/"//g' | grep ENSDARG | sort \
+      | join -j1 -t$'\t' - $basedir/annotation/annotation.txt \
+      | sort -k3,3g -k2,2g -k1,1 \
+      >> $gitdir/$comp/$event.all.tsv
+      awk '{ if ($3 < 0.05) print $0 }' $gitdir/$comp/$event.all.tsv >> $gitdir/$comp/$event.sig.tsv
+    cp $gitdir/$comp/$event.all.tsv $gitdir/$comp/$event.sig.tsv $basedir/$comp
+  done
+done
+
+rsync -vaz --delete $gitdir/rmats-* $webhost:$webpath/
+```
