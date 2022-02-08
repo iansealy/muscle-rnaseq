@@ -1,60 +1,60 @@
-Job ID: 54632720
-Array Job ID: 54632720_5
+Job ID: 54633820
+Array Job ID: 54633820_5
 Cluster: csd3
 User/Group: is460/is460
 State: COMPLETED (exit code 0)
 Cores: 1
-CPU Utilized: 00:01:02
-CPU Efficiency: 89.86% of 00:01:09 core-walltime
-Job Wall-clock time: 00:01:09
+CPU Utilized: 00:01:01
+CPU Efficiency: 92.42% of 00:01:06 core-walltime
+Job Wall-clock time: 00:01:06
 Memory Utilized: 0.00 MB (estimated maximum)
 Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
 
-Job ID: 54632785
-Array Job ID: 54632720_1
-Cluster: csd3
-User/Group: is460/is460
-State: COMPLETED (exit code 0)
-Cores: 1
-CPU Utilized: 00:00:10
-CPU Efficiency: 58.82% of 00:00:17 core-walltime
-Job Wall-clock time: 00:00:17
-Memory Utilized: 0.00 MB (estimated maximum)
-Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
-
-Job ID: 54632786
-Array Job ID: 54632720_2
+Job ID: 54633915
+Array Job ID: 54633820_1
 Cluster: csd3
 User/Group: is460/is460
 State: COMPLETED (exit code 0)
 Cores: 1
 CPU Utilized: 00:00:11
-CPU Efficiency: 64.71% of 00:00:17 core-walltime
-Job Wall-clock time: 00:00:17
+CPU Efficiency: 68.75% of 00:00:16 core-walltime
+Job Wall-clock time: 00:00:16
 Memory Utilized: 0.00 MB (estimated maximum)
 Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
 
-Job ID: 54632787
-Array Job ID: 54632720_3
+Job ID: 54633916
+Array Job ID: 54633820_2
 Cluster: csd3
 User/Group: is460/is460
 State: COMPLETED (exit code 0)
 Cores: 1
-CPU Utilized: 00:00:18
-CPU Efficiency: 75.00% of 00:00:24 core-walltime
-Job Wall-clock time: 00:00:24
+CPU Utilized: 00:00:11
+CPU Efficiency: 68.75% of 00:00:16 core-walltime
+Job Wall-clock time: 00:00:16
 Memory Utilized: 0.00 MB (estimated maximum)
 Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
 
-Job ID: 54632788
-Array Job ID: 54632720_4
+Job ID: 54633917
+Array Job ID: 54633820_3
 Cluster: csd3
 User/Group: is460/is460
 State: COMPLETED (exit code 0)
 Cores: 1
-CPU Utilized: 00:00:51
-CPU Efficiency: 87.93% of 00:00:58 core-walltime
-Job Wall-clock time: 00:00:58
+CPU Utilized: 00:00:17
+CPU Efficiency: 80.95% of 00:00:21 core-walltime
+Job Wall-clock time: 00:00:21
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
+
+Job ID: 54633918
+Array Job ID: 54633820_4
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:00:52
+CPU Efficiency: 92.86% of 00:00:56 core-walltime
+Job Wall-clock time: 00:00:56
 Memory Utilized: 0.00 MB (estimated maximum)
 Memory Efficiency: 0.00% of 3.34 GB (3.34 GB/core)
 
