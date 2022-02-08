@@ -724,3 +724,102 @@ done
 
 rsync -vaz --delete $gitdir/rmats-* $webhost:$webpath/
 ```
+
+## Run DESeq2 again
+
+Rerun DESeq2 with samples grouped by PC2 from https://temp.buschlab.org/muscle-rnaseq/deseq2-all/pca.pdf which appears to show a clutch effect
+
+Exclude srpk3_wt_ttnb_het_7 which is between groups and also a QoRTs outlier:
+
+https://temp.buschlab.org/muscle-rnaseq/qorts/plot-sampleHL-coloredByLane-srpk3_wt_ttnb_het_7.pdf
+
+```
+cut -f1,3 deseq2-all/PCs.tsv | sort -nk2,2 | grep -vE 'Sample|srpk3_wt_ttnb_het_7' | awk '{ print $1 "\t" $2 "\t" $1 }' | sed -E 's/_[0-9]+$//' \
+| awk '{ if ($2 < 0) { print $1 "\t" $3 "\tclutch1" } else { print $1 "\t" $3 "\tclutch2" } }' > $gitdir/samples-clutch.tsv
+mkdir -p $basedir/deseq2-all-clutch
+cp $gitdir/samples-clutch.tsv $basedir/deseq2-all-clutch/samples.tsv
+echo "Rscript deseq2.R -s $basedir/deseq2-all-clutch/samples.tsv \
+-e srpk3_hom_ttnb_het,srpk3_hom_ttnb_wt \
+-c srpk3_wt_ttnb_het,srpk3_wt_ttnb_wt \
+-a $basedir/annotation/annotation.txt -d $basedir/star2 -o $basedir/deseq2-all-clutch" > $basedir/deseq2/deseq2-clutch.txt
+for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_wt; do
+  e=`echo "$comp" | awk -F':' '{ print $1 }'`
+  c=`echo "$comp" | awk -F':' '{ print $2 }'`
+  mkdir -p $basedir/deseq2-${e}_vs_$c-clutch
+  grep -E "$e|$c" $gitdir/samples-clutch.tsv > $basedir/deseq2-${e}_vs_$c-clutch/samples.tsv
+  echo "Rscript deseq2.R -s $basedir/deseq2-${e}_vs_$c-clutch/samples.tsv -e $e -c $c -a $basedir/annotation/annotation.txt -d $basedir/star2 -o $basedir/deseq2-${e}_vs_$c-clutch" >> $basedir/deseq2/deseq2-clutch.txt
+done
+
+sbatch $gitdir/sbatch/deseq2-clutch.sbatch
+
+process-seff $basedir/deseq2/deseq2-clutch
+cp $basedir/*/*.seff* $gitdir/seff
+
+cp -r $basedir/deseq2-*-clutch $gitdir
+
+scp -r $basedir/deseq2-*-clutch $webhost:$webpath
+```
+
+Number of significant genes for each experiment:
+
+```
+grep -c ^ENS $basedir/deseq2-*-clutch/sig.tsv | sed -e 's/\/sig.tsv:/\t/' | sed -e 's/.*\/deseq2-//' | grep -v all | sed -e 's/_vs_/ vs /'
+```
+
+```
+srpk3_hom_ttnb_het vs srpk3_hom_ttnb_wt-clutch  52
+srpk3_hom_ttnb_het vs srpk3_wt_ttnb_het-clutch  98
+srpk3_hom_ttnb_het vs srpk3_wt_ttnb_wt-clutch   397
+srpk3_hom_ttnb_wt vs srpk3_wt_ttnb_wt-clutch    332
+srpk3_wt_ttnb_het vs srpk3_wt_ttnb_wt-clutch    53
+```
+
+## Make count plots
+
+```
+for comp in srpk3_hom_ttnb_het:srpk3_hom_ttnb_wt srpk3_wt_ttnb_het:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_het srpk3_hom_ttnb_wt:srpk3_wt_ttnb_wt srpk3_hom_ttnb_het:srpk3_wt_ttnb_wt; do
+  e=`echo "$comp" | awk -F':' '{ print $1 }'`
+  c=`echo "$comp" | awk -F':' '{ print $2 }'`
+  echo "Rscript countplots.R -s $basedir/deseq2-all-clutch/samples.tsv -o $basedir/deseq2-${e}_vs_$c-clutch --all $basedir/deseq2-all-clutch/all.tsv --sig $basedir/deseq2-${e}_vs_$c-clutch/sig.tsv" \
+>> $basedir/deseq2/countplots-clutch.txt
+done
+
+sbatch $gitdir/sbatch/countplots-clutch.sbatch
+
+process-seff $basedir/deseq2/countplots-clutch
+cp $basedir/*/*.seff* $gitdir/seff
+
+rsync -va $basedir/deseq2-*-clutch $gitdir/
+rsync -vaz $basedir/deseq2-*-clutch $webhost:$webpath/
+```
+
+## Run ZFA enrichment
+
+```
+for dir in `find $basedir/deseq2-*-clutch -maxdepth 0`; do
+  echo "cd $dir; zfa sig.tsv all.tsv; rm table-tmp.sig-Parent-Child-Union-Bonferroni.txt"
+done > $basedir/zfa/zfa-clutch.txt
+
+sbatch $gitdir/sbatch/zfa-clutch.sbatch
+
+process-seff $basedir/zfa/zfa-clutch
+cp $basedir/*/*.seff* $gitdir/seff
+
+rsync -va $basedir/deseq2-*-clutch $gitdir/
+rsync -vaz $basedir/deseq2-*-clutch $webhost:$webpath/
+```
+
+## Run topGO
+
+```
+cp $gitdir/scripts/topgo-clutch.sh $basedir/topgo
+find $basedir/deseq2-*-clutch -maxdepth 0 > $basedir/topgo/topgo-clutch.txt
+
+sbatch $gitdir/sbatch/topgo-clutch.sbatch
+
+process-seff $basedir/topgo/topgo-clutch
+cp $basedir/*/*.seff* $gitdir/seff
+
+rsync -va --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-*-clutch $gitdir/
+rsync -vaz --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-*-clutch $webhost:$webpath/
+```

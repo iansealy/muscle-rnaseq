@@ -1,0 +1,78 @@
+Job ID: 54631586
+Array Job ID: 54631586_6
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:02:20
+CPU Efficiency: 19.31% of 00:12:05 core-walltime
+Job Wall-clock time: 00:02:25
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
+Job ID: 54631622
+Array Job ID: 54631586_1
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:01:53
+CPU Efficiency: 19.15% of 00:09:50 core-walltime
+Job Wall-clock time: 00:01:58
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
+Job ID: 54631623
+Array Job ID: 54631586_2
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:00:58
+CPU Efficiency: 18.41% of 00:05:15 core-walltime
+Job Wall-clock time: 00:01:03
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
+Job ID: 54631624
+Array Job ID: 54631586_3
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:00:56
+CPU Efficiency: 17.78% of 00:05:15 core-walltime
+Job Wall-clock time: 00:01:03
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
+Job ID: 54631625
+Array Job ID: 54631586_4
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:01:03
+CPU Efficiency: 18.53% of 00:05:40 core-walltime
+Job Wall-clock time: 00:01:08
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
+Job ID: 54631626
+Array Job ID: 54631586_5
+Cluster: csd3
+User/Group: is460/is460
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 5
+CPU Utilized: 00:01:23
+CPU Efficiency: 18.86% of 00:07:20 core-walltime
+Job Wall-clock time: 00:01:28
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 16.50 GB (16.50 GB/node)
+
