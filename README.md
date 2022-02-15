@@ -735,7 +735,7 @@ https://temp.buschlab.org/muscle-rnaseq/qorts/plot-sampleHL-coloredByLane-srpk3_
 
 ```
 cut -f1,3 deseq2-all/PCs.tsv | sort -nk2,2 | grep -vE 'Sample|srpk3_wt_ttnb_het_7' | awk '{ print $1 "\t" $2 "\t" $1 }' | sed -E 's/_[0-9]+$//' \
-| awk '{ if ($2 < 0) { print $1 "\t" $3 "\tclutch1" } else { print $1 "\t" $3 "\tclutch2" } }' > $gitdir/samples-clutch.tsv
+| awk '{ if ($2 < 0) { print $1 "\t" $3 "\tclutch1" } else { print $1 "\t" $3 "\tclutch2" } }' | sort -V > $gitdir/samples-clutch.tsv
 mkdir -p $basedir/deseq2-all-clutch
 cp $gitdir/samples-clutch.tsv $basedir/deseq2-all-clutch/samples.tsv
 echo "Rscript deseq2.R -s $basedir/deseq2-all-clutch/samples.tsv \
@@ -822,4 +822,17 @@ cp $basedir/*/*.seff* $gitdir/seff
 
 rsync -va --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-*-clutch $gitdir/
 rsync -vaz --include "*/"  --include="*.tsv" --include="*.pdf" --exclude="*" $basedir/deseq2-*-clutch $webhost:$webpath/
+```
+
+## Convert BAM to bigWig
+
+```
+mkdir -p $basedir/ttn.1
+
+cp $gitdir/samples.tsv $gitdir/scripts/ttn.1.sh $basedir/ttn.1
+
+sbatch $gitdir/sbatch/ttn.1.sbatch
+
+process-seff $basedir/ttn.1/ttn.1
+cp $basedir/*/*.seff* $gitdir/seff
 ```
