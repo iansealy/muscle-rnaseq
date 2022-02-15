@@ -836,3 +836,12 @@ sbatch $gitdir/sbatch/ttn.1.sbatch
 process-seff $basedir/ttn.1/ttn.1
 cp $basedir/*/*.seff* $gitdir/seff
 ```
+
+## Archive
+
+```
+module load rclone/1.51.0
+rclone sync --progress $basedir/ drive-cam-muscle-rnaseq:
+rclone check --progress $basedir/ drive-cam-muscle-rnaseq:
+module unload rclone/1.51.0
+```
