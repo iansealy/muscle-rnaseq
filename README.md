@@ -903,5 +903,5 @@ module unload rclone/1.51.0
 ## Zip before adding to repo
 
 ```
-find $basedir -type f -size +50M | xargs gzip
+find $gitdir -type f -size +50M | xargs gzip
 ```
