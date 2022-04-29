@@ -845,3 +845,63 @@ rclone sync --progress $basedir/ drive-cam-muscle-rnaseq:
 rclone check --progress $basedir/ drive-cam-muscle-rnaseq:
 module unload rclone/1.51.0
 ```
+
+## Add human orthologues
+
+```
+mkdir $basedir/orthologues
+cp $gitdir/scripts/add_ensembl_homologues.pl $basedir/orthologues
+
+for dir in `ls -d $basedir/deseq2-*`; do
+  echo "perl $basedir/orthologues/add_ensembl_homologues.pl --species 'Danio rerio' --homologous_species 'Homo sapiens' --gene_field 1 --header < $dir/sig.tsv > $dir/orthologues-sig.tsv"
+done > $basedir/orthologues/orthologues.txt
+
+sbatch $gitdir/sbatch/orthologues.sbatch
+
+process-seff $basedir/orthologues/orthologues
+cp $basedir/*/*.seff* $gitdir/seff
+```
+
+## RBM20 targets
+
+Get 31 RMB20 targets from Table S2 of "RBM20, a gene for hereditary cardiomyopathy, regulates titin splicing"
+
+rbm20-targets.txt
+
+Get zebrafish orthologues from BioMart
+
+rbm20-human-zebrafish-targets.txt
+
+```
+grep -Ff <(cut -f2 $gitdir/rbm20-human-zebrafish-targets.txt | sort -u | grep ENS) $gitdir/rmats-*/*.sig.tsv \
+| grep -v zfa | sed -e 's/.*rmats-//' | cut -f1,9 | sed -e 's/:/\t/' | sort -u
+srpk3_hom_ttnb_het_vs_srpk3_hom_ttnb_wt/SE.sig.tsv      ENSDARG00000043010      camk2d1
+srpk3_hom_ttnb_het_vs_srpk3_hom_ttnb_wt/SE.sig.tsv      ENSDARG00000087402      tpm1
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_het/MXE.sig.tsv     ENSDARG00000033683      tpma
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_het/MXE.sig.tsv     ENSDARG00000101028      fnbp1b
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_het/SE.sig.tsv      ENSDARG00000103435      sorbs1
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_wt/A3SS.sig.tsv     ENSDARG00000008398      cacna1c
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_wt/RI.sig.tsv       ENSDARG00000103435      sorbs1
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_wt/SE.sig.tsv       ENSDARG00000027600      pdlim5b
+srpk3_hom_ttnb_het_vs_srpk3_wt_ttnb_wt/SE.sig.tsv       ENSDARG00000043010      camk2d1
+srpk3_hom_ttnb_wt_vs_srpk3_wt_ttnb_wt/MXE.sig.tsv       ENSDARG00000033683      tpma
+srpk3_hom_ttnb_wt_vs_srpk3_wt_ttnb_wt/MXE.sig.tsv       ENSDARG00000101777      pdlim5a
+srpk3_wt_ttnb_het_vs_srpk3_wt_ttnb_wt/A3SS.sig.tsv      ENSDARG00000101028      fnbp1b
+srpk3_wt_ttnb_het_vs_srpk3_wt_ttnb_wt/SE.sig.tsv        ENSDARG00000022378      mtmr1b
+srpk3_wt_ttnb_het_vs_srpk3_wt_ttnb_wt/SE.sig.tsv        ENSDARG00000103435      sorbs1
+```
+
+## Archive
+
+```
+module load rclone/1.51.0
+rclone sync --progress $basedir/ drive-cam-muscle-rnaseq:
+rclone check --progress $basedir/ drive-cam-muscle-rnaseq:
+module unload rclone/1.51.0
+```
+
+## Zip before adding to repo
+
+```
+find $basedir -type f -size +50M | xargs gzip
+```
